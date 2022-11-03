@@ -1,0 +1,16 @@
+name: Reusable worflow hello world
+
+on:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      name: 
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World from reusable workflow public
+        run: echo "Hello ${{ inputs.name }}"
